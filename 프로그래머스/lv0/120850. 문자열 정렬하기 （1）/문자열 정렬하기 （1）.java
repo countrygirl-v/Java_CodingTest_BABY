@@ -5,7 +5,7 @@ class Solution {
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
         for(int i = 0; i < my_string.length(); i++){
-            if(Character.isDigit(my_string.charAt(i))) arrayList.add((int) my_string.charAt(i) - 48);
+            if(Character.isDigit(my_string.charAt(i))) arrayList.add((int) my_string.charAt(i) - '0');
         }
         Collections.sort(arrayList);
         int[] answer = new int[arrayList.size()];
