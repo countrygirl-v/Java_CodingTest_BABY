@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
-
 class Solution {
     public int solution(int[] array, int height) {
         int answer = 0;
