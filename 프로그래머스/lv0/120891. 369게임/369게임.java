@@ -5,8 +5,7 @@ class Solution {
         while (order > 0) {
             number = order % 10;
             order /= 10;
-            if(number == 3 || number == 6) answer++;
-            else if (number == 9) answer++;
+            if(number == 3 || number == 6 || number == 9) answer++;
         }
         return answer;
     }
