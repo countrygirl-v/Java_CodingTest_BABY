@@ -1,6 +1,3 @@
-import java.util.HashSet;
-import java.util.Set;
-
 class Solution {
     public String solution(String my_string) {
         String answer = "";
