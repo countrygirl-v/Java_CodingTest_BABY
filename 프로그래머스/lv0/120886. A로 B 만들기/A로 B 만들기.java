@@ -11,8 +11,7 @@ class Solution {
         Arrays.sort(charAfter);
         String sortAfter = new String(charAfter);
         
-        if(sortAfter.equals(sortBefore)) answer = 1;
-        else answer = 0;
+        answer = (sortAfter.equals(sortBefore)) ? 1 : 0;
         return answer;
     }
 }
