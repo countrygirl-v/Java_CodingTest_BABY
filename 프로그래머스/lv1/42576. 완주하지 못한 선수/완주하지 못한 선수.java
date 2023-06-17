@@ -1,18 +1,14 @@
-import java.util.*;
+import java.util.HashMap;
 class Solution {
     public String solution(String[] participant, String[] completion) {
-        String result = "";
-        Arrays.sort(participant);
-        Arrays.sort(completion);
+        String answer = "";
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        for (String part : participant) hashMap.put(part, hashMap.getOrDefault(part, 0) + 1);
+        for (String com : completion) hashMap.put(com, hashMap.get(com) - 1);
 
-        for (int i = 0; i < completion.length; i++) {
-            if(!participant[i].equals(completion[i])){
-                result = participant[i];
-                break;
-            }
+        for (String key : hashMap.keySet()) {
+            if (hashMap.get(key) != 0) answer = key;
         }
-        if(result.equals("")) result = participant[participant.length - 1];
-        return result;
-
+        return answer;
     }
 }
