@@ -1,24 +1,18 @@
-import java.util.*;
 class Solution {
-    public String solution(String[] participant, String[] completion) {
-        String result = "";
+    public String solution(String s) {
+        String answer = "";
+        String[] stringArray = s.split(" ");
 
-        if (participant.length == 1) {
-            result = participant[0];
-            return result;
-        }
-
-        Arrays.sort(participant);
-        Arrays.sort(completion);
-
-        for (int i = 0; i < completion.length; i++) {
-            if(!participant[i].equals(completion[i])){
-                result = participant[i];
+        for (int i = 0; i < stringArray.length; i++) {
+            String word = "";
+            for (int j = 0; j < stringArray[i].length(); j++) {
+                if (j % 2 == 0) word += Character.toUpperCase(stringArray[i].charAt(j));
+                else word += Character.toLowerCase(stringArray[i].charAt(j));
             }
+            if (i == stringArray.length - 1) answer += word;
+            else answer += word + " ";
         }
-        if(result.equals("")) result = participant[participant.length - 1];
-
-        return result;
-
+        int spaceNum = s.length() - answer.length();
+        return answer + " ".repeat(spaceNum);
     }
 }
