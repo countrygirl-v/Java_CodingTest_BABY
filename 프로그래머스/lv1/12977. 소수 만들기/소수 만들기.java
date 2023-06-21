@@ -6,7 +6,6 @@ class Solution {
             for (int j = i + 1; j < nums.length; j++) {
                 for (int k = j + 1; k < nums.length; k++) {
                     int sum = (nums[i] + nums[j] + nums[k]);
-                    int count = 0;
                     boolean check = false;
 
                     for (int n = 2; n*n <= sum; n++) {
